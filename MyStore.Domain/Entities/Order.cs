@@ -34,9 +34,9 @@ public class Order
         };
 
         foreach (var item in cart.Items)
-            order._items.Add(new OrderItem(item.ProductId, item.UnitPrice, item.Quantity));
+            order._items.Add(new OrderItem(item.Id, item.ProductId, item.UnitPrice, item.Quantity));
 
-        order._history.Add(new OrderStatusHistory(OrderStatus.Pending));
+        order._history.Add(new OrderStatusHistory(order.Id, OrderStatus.Pending));
 
         return order;
     }
@@ -55,7 +55,7 @@ public class Order
             throw new DomainException($"Invalid transition: {Status} → {newStatus}.");
 
         Status = newStatus;
-        _history.Add(new OrderStatusHistory(newStatus));
+        _history.Add(new OrderStatusHistory(Id, newStatus));
     }
 
     public void RegisterPayment(string transactionId, PaymentMethod method)
