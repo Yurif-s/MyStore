@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyStore.Domain.Interfaces;
 using MyStore.Infrastructure.Data;
+using MyStore.Infrastructure.Repositories;
 
 namespace MyStore.Infrastructure;
 
@@ -12,6 +14,7 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         AddDbContext(services, configuration);
+        AddRepositories(services);
         return services;
     }
 
@@ -22,5 +25,13 @@ public static class DependencyInjection
 
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(connectionString));
+    }
+    private static void AddRepositories(IServiceCollection services)
+    {
+        services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<ICartRepository, CartRepository>();
+        services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }
