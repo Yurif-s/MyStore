@@ -31,6 +31,18 @@ public class Product
         CategoryId = categoryId;
     }
 
+    public void Update(string name, string description, decimal price, int categoryId)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        if (price <= 0) throw new DomainException("Price must be positive.");
+
+        Name = name;
+        Description = description;
+        Price = price;
+        CategoryId = categoryId;
+    }
+
+
     public void UpdateStock(int quantity)
     {
         if (Stock + quantity < 0)
