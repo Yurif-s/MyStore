@@ -79,6 +79,15 @@ namespace MyStore.Application.Messages {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Product is invalid..
+        /// </summary>
+        internal static string PRODUCT_ID_INVALID {
+            get {
+                return ResourceManager.GetString("PRODUCT_ID_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Product name must not exceed 200 characters..
         /// </summary>
         internal static string PRODUCT_NAME_MAX_LENGTH {

@@ -123,6 +123,9 @@
   <data name="PRODUCT_CATEGORY_INVALID" xml:space="preserve">
     <value>Category is invalid.</value>
   </data>
+  <data name="PRODUCT_ID_INVALID" xml:space="preserve">
+    <value>Product is invalid.</value>
+  </data>
   <data name="PRODUCT_NAME_MAX_LENGTH" xml:space="preserve">
     <value>Product name must not exceed 200 characters.</value>
   </data>
