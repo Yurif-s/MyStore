@@ -8,6 +8,11 @@ namespace MyStore.Infrastructure.Repositories;
 internal class CategoryRepository(AppDbContext dbContext)
     : Repository<Category>(dbContext), ICategoryRepository
 {
+    public async Task<bool> ExistsByNameAsync(string name, CancellationToken ct = default)
+        => await _dbContext.Categories
+            .AsNoTracking()
+            .AnyAsync(c => c.Name == name);
+
     public async Task<IEnumerable<Category>> GetByIdsAsync(IEnumerable<int> ids, CancellationToken ct = default)
         => await _dbContext.Categories
             .AsNoTracking()
