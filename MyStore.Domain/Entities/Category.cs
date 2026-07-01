@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace MyStore.Domain.Entities;
 
@@ -23,7 +24,9 @@ public class Category
 
     private static string GenerateSlug(string text)
     {
-        var normalized = text.Normalize(NormalizationForm.FormD);
+        var str = text.ToLowerInvariant().Trim();
+
+        var normalized = str.Normalize(NormalizationForm.FormD);
         var sb = new StringBuilder();
 
         foreach (var c in normalized)
@@ -32,9 +35,11 @@ public class Category
                 sb.Append(c);
         }
 
-        return sb.ToString()
-            .Normalize(NormalizationForm.FormC)
-            .ToLowerInvariant()
-            .Replace(" ", "-");
+        str = sb.ToString().Normalize(NormalizationForm.FormC);
+        str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
+        str = Regex.Replace(str, @"[\s-]+", "-");
+        str = str.Trim('-');
+
+        return str;
     }
 }
