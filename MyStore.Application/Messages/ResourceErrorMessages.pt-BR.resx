@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CATEGORY_ALREADY_EXISTS" xml:space="preserve">
+    <value>A categoria já existe.</value>
+  </data>
+  <data name="CATEGORY_NAME_MAX_LENGTH" xml:space="preserve">
+    <value>O nome da categoria deve ter no máximo 100 caracteres.</value>
+  </data>
+  <data name="CATEGORY_NAME_REQUIRED" xml:space="preserve">
+    <value>Nome da categoria é obrigatório.</value>
+  </data>
   <data name="CATEGORY_NOT_FOUND" xml:space="preserve">
     <value>Categoria não encontrada.</value>
   </data>

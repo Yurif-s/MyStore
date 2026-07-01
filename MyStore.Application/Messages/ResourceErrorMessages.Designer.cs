@@ -61,6 +61,33 @@ namespace MyStore.Application.Messages {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Category already exists..
+        /// </summary>
+        public static string CATEGORY_ALREADY_EXISTS {
+            get {
+                return ResourceManager.GetString("CATEGORY_ALREADY_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Category name must not exceed 100 characters..
+        /// </summary>
+        public static string CATEGORY_NAME_MAX_LENGTH {
+            get {
+                return ResourceManager.GetString("CATEGORY_NAME_MAX_LENGTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Category name is required..
+        /// </summary>
+        public static string CATEGORY_NAME_REQUIRED {
+            get {
+                return ResourceManager.GetString("CATEGORY_NAME_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Category not found..
         /// </summary>
         public static string CATEGORY_NOT_FOUND {
