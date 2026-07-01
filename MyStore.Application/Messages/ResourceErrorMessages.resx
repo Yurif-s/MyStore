@@ -141,4 +141,7 @@
   <data name="PRODUCT_STOCK_INVALID" xml:space="preserve">
     <value>Product stock cannot be negative.</value>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Unknown error.</value>
+  </data>
 </root>

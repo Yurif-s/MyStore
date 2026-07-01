@@ -22,7 +22,7 @@ namespace MyStore.Application.Messages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResourceErrorMessages {
+    public class ResourceErrorMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MyStore.Application.Messages {
         ///   Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyStore.Application.Messages.ResourceErrorMessages", typeof(ResourceErrorMessages).Assembly);
@@ -51,7 +51,7 @@ namespace MyStore.Application.Messages {
         ///   pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace MyStore.Application.Messages {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Category not found..
         /// </summary>
-        internal static string CATEGORY_NOT_FOUND {
+        public static string CATEGORY_NOT_FOUND {
             get {
                 return ResourceManager.GetString("CATEGORY_NOT_FOUND", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace MyStore.Application.Messages {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Category is invalid..
         /// </summary>
-        internal static string PRODUCT_CATEGORY_INVALID {
+        public static string PRODUCT_CATEGORY_INVALID {
             get {
                 return ResourceManager.GetString("PRODUCT_CATEGORY_INVALID", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace MyStore.Application.Messages {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Product is invalid..
         /// </summary>
-        internal static string PRODUCT_ID_INVALID {
+        public static string PRODUCT_ID_INVALID {
             get {
                 return ResourceManager.GetString("PRODUCT_ID_INVALID", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace MyStore.Application.Messages {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Product name must not exceed 200 characters..
         /// </summary>
-        internal static string PRODUCT_NAME_MAX_LENGTH {
+        public static string PRODUCT_NAME_MAX_LENGTH {
             get {
                 return ResourceManager.GetString("PRODUCT_NAME_MAX_LENGTH", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace MyStore.Application.Messages {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Product name is required..
         /// </summary>
-        internal static string PRODUCT_NAME_REQUIRED {
+        public static string PRODUCT_NAME_REQUIRED {
             get {
                 return ResourceManager.GetString("PRODUCT_NAME_REQUIRED", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace MyStore.Application.Messages {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Product not found..
         /// </summary>
-        internal static string PRODUCT_NOT_FOUND {
+        public static string PRODUCT_NOT_FOUND {
             get {
                 return ResourceManager.GetString("PRODUCT_NOT_FOUND", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace MyStore.Application.Messages {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Product price must be greater than zero..
         /// </summary>
-        internal static string PRODUCT_PRICE_INVALID {
+        public static string PRODUCT_PRICE_INVALID {
             get {
                 return ResourceManager.GetString("PRODUCT_PRICE_INVALID", resourceCulture);
             }
@@ -126,9 +126,18 @@ namespace MyStore.Application.Messages {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Product stock cannot be negative..
         /// </summary>
-        internal static string PRODUCT_STOCK_INVALID {
+        public static string PRODUCT_STOCK_INVALID {
             get {
                 return ResourceManager.GetString("PRODUCT_STOCK_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Unknown error..
+        /// </summary>
+        public static string UNKNOWN_ERROR {
+            get {
+                return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
             }
         }
     }
