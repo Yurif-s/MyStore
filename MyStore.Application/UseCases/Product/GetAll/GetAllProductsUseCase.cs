@@ -10,7 +10,7 @@ public class GetAllProductsUseCase(
 {
     public async Task<Result<List<ProductDto>>> ExecuteAsync(CancellationToken ct = default)
     {
-        var products = await productRepository.GetAllAsync();
+        var products = await productRepository.GetAllAsync(ct);
 
         if (!products.Any())
             return Result<List<ProductDto>>.NoContent();
