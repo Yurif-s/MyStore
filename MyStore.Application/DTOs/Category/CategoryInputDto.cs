@@ -1,5 +1,5 @@
 ﻿namespace MyStore.Application.DTOs.Category;
 
-public record CreateCategoryDto(
+public record CategoryInputDto(
     string Name
 );
