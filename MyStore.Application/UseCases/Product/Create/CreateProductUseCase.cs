@@ -1,7 +1,6 @@
 ﻿using MyStore.Application.DTOs.Product;
 using MyStore.Application.Messages;
 using MyStore.Domain.Interfaces;
-using Mapster;
 
 namespace MyStore.Application.UseCases.Product.Create;
 
