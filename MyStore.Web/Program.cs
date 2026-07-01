@@ -1,5 +1,6 @@
 using MyStore.Application;
 using MyStore.Infrastructure;
+using MyStore.Web.Filters;
 using MyStore.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,11 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
+
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<ExceptionFilter>();
+});
 
 var app = builder.Build();
 
