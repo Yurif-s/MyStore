@@ -1,3 +1,8 @@
-﻿namespace MyStore.Domain.Exceptions;
+﻿using System.Net;
 
-public class DomainException(string message) : Exception(message);
+namespace MyStore.Domain.Exceptions;
+
+public class DomainException(string message) : Exception(message)
+{
+    public int StatusCode { get; init; } = (int)HttpStatusCode.BadRequest;
+}
