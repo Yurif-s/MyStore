@@ -4,7 +4,10 @@ using MyStore.Domain.Interfaces;
 
 namespace MyStore.Application.UseCases.Product.Update;
 
-public class UpdateProductUseCase(IProductRepository productRepository, ICategoryRepository categoryRepository, IUnitOfWork unitOfWork) : IUpdateProductUseCase
+public class UpdateProductUseCase(
+    IProductRepository productRepository,
+    ICategoryRepository categoryRepository,
+    IUnitOfWork unitOfWork) : IUpdateProductUseCase
 {
     public async Task<Result<ProductDto>> ExecuteAsync(UpdateProductDto dto, CancellationToken ct = default)
     {
