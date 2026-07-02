@@ -2,11 +2,11 @@
 using MyStore.Application.DTOs.Category;
 using MyStore.Application.Messages;
 
-namespace MyStore.Application.UseCases.Category.Create;
+namespace MyStore.Application.UseCases.Category.Shared;
 
-public class CreateCategoryValidator : AbstractValidator<CategoryInputDto>
+public class CategoryValidator : AbstractValidator<CategoryInputDto>
 {
-    public CreateCategoryValidator()
+    public CategoryValidator()
     {
         RuleFor(c => c.Name)
             .NotEmpty()

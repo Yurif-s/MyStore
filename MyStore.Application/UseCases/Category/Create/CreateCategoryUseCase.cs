@@ -1,5 +1,6 @@
 ﻿using MyStore.Application.DTOs.Category;
 using MyStore.Application.Messages;
+using MyStore.Application.UseCases.Category.Shared;
 using MyStore.Domain.Interfaces;
 
 namespace MyStore.Application.UseCases.Category.Create;
@@ -10,7 +11,7 @@ public class CreateCategoryUseCase(
 {
     public async Task<Result<CategoryDto>> ExecuteAsync(CategoryInputDto dto, CancellationToken ct = default)
     {
-        var validationResult = await new CreateCategoryValidator().ValidateAsync(dto, ct);
+        var validationResult = await new CategoryValidator().ValidateAsync(dto, ct);
         if (!validationResult.IsValid)
             return Result<CategoryDto>.ValidationError(
                 validationResult.Errors.Select(e => e.ErrorMessage));
