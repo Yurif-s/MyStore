@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using MyStore.Domain.Exceptions;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -18,6 +19,14 @@ public class Category
     public Category(string name)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        Name = name;
+        Slug = GenerateSlug(name);
+    }
+
+    public void Update(string name)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+
         Name = name;
         Slug = GenerateSlug(name);
     }
