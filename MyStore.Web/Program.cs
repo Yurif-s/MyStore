@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using MyStore.Application;
 using MyStore.Infrastructure;
+using MyStore.Infrastructure.Identity;
 using MyStore.Web.Filters;
 using MyStore.Web.Middlewares;
 
@@ -18,6 +20,10 @@ builder.Services.AddControllersWithViews(options =>
 
 var app = builder.Build();
 
+using var scope = app.Services.CreateScope();
+var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+await RoleSeeder.SeedAsync(roleManager);
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -25,6 +31,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.MapControllers();
 
 app.UseMiddleware<CultureMiddleware>();
 
