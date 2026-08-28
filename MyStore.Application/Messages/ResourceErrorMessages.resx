@@ -129,6 +129,24 @@
   <data name="CATEGORY_NOT_FOUND" xml:space="preserve">
     <value>Category not found.</value>
   </data>
+  <data name="EMAIL_INVALID" xml:space="preserve">
+    <value>Email is invalid.</value>
+  </data>
+  <data name="EMAIL_REQUIRED" xml:space="preserve">
+    <value>Email is required.</value>
+  </data>
+  <data name="FULLNAME_MAX_LENGTH" xml:space="preserve">
+    <value>Fullname must not exceed 100 characters.</value>
+  </data>
+  <data name="FULLNAME_REQUIRED" xml:space="preserve">
+    <value>Fullname is required.</value>
+  </data>
+  <data name="PASSWORD_MIN_LENGTH" xml:space="preserve">
+    <value>The password must be at least 8 characters long.</value>
+  </data>
+  <data name="PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Password is required.</value>
+  </data>
   <data name="PRODUCT_CATEGORY_INVALID" xml:space="preserve">
     <value>Category is invalid.</value>
   </data>

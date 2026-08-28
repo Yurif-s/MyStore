@@ -46,4 +46,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Cart\" />
+    <Folder Include="UseCases\Order\" />
+  </ItemGroup>
+
 </Project>
