@@ -2,7 +2,7 @@
 
 namespace MyStore.Infrastructure.Identity;
 
-internal class ApplicationUser : IdentityUser
+public class ApplicationUser : IdentityUser
 {
     public string Fullname { get; set; } = string.Empty;
 }
