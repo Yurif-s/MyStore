@@ -141,6 +141,9 @@
   <data name="FULLNAME_REQUIRED" xml:space="preserve">
     <value>Fullname is required.</value>
   </data>
+  <data name="INVALID_CREDENTIALS" xml:space="preserve">
+    <value>Invalid credentials.</value>
+  </data>
   <data name="PASSWORD_MIN_LENGTH" xml:space="preserve">
     <value>The password must be at least 8 characters long.</value>
   </data>
@@ -170,5 +173,8 @@
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
     <value>Unknown error.</value>
+  </data>
+  <data name="USER_NOT_FOUND" xml:space="preserve">
+    <value>User not found.</value>
   </data>
 </root>

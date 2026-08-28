@@ -133,6 +133,15 @@ namespace MyStore.Application.Messages {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid credentials..
+        /// </summary>
+        public static string INVALID_CREDENTIALS {
+            get {
+                return ResourceManager.GetString("INVALID_CREDENTIALS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The password must be at least 8 characters long..
         /// </summary>
         public static string PASSWORD_MIN_LENGTH {
@@ -219,6 +228,15 @@ namespace MyStore.Application.Messages {
         public static string UNKNOWN_ERROR {
             get {
                 return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a User not found..
+        /// </summary>
+        public static string USER_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("USER_NOT_FOUND", resourceCulture);
             }
         }
     }

@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using MyStore.Application.UseCases.Auth.Login;
+using MyStore.Application.UseCases.Auth.Register;
 using MyStore.Application.UseCases.Category.Create;
 using MyStore.Application.UseCases.Category.Delete;
 using MyStore.Application.UseCases.Category.GetAll;
@@ -34,5 +36,8 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetCategoryBySlugUseCase, GetCategoryBySlugUseCase>();
         services.AddScoped<IUpdateCategoryUseCase, UpdateCategoryUseCase>();
         services.AddScoped<IDeleteCategoryUseCase, DeleteCategoryUseCase>();
+
+        services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
+        services.AddScoped<ILoginUserUseCase, LoginUserUseCase>();
     }
 }
