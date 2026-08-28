@@ -1,8 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyStore.Application.Interfaces;
 using MyStore.Domain.Interfaces;
 using MyStore.Infrastructure.Data;
+using MyStore.Infrastructure.Identity;
 using MyStore.Infrastructure.Repositories;
 
 namespace MyStore.Infrastructure;
@@ -15,6 +18,7 @@ public static class DependencyInjection
     {
         AddDbContext(services, configuration);
         AddRepositories(services);
+        AddIdentity(services);
         return services;
     }
 
@@ -33,5 +37,20 @@ public static class DependencyInjection
         services.AddScoped<ICartRepository, CartRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+    }
+
+    private static void AddIdentity(IServiceCollection services)
+    {
+        services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+        {
+            options.Password.RequireDigit = true;
+            options.Password.RequiredLength = 8;
+            options.Password.RequireUppercase = true;
+            options.Password.RequireNonAlphanumeric = false;
+        })
+        .AddEntityFrameworkStores<AppDbContext>()
+        .AddDefaultTokenProviders();
+
+        services.AddScoped<IAuthService, AuthService>();
     }
 }
