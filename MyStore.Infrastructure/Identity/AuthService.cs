@@ -9,9 +9,23 @@ public class AuthService(
     UserManager<ApplicationUser> userManager,
     SignInManager<ApplicationUser> signInManager) : IAuthService
 {
-    public Task<Result<UserDto>> LoginAsync(LoginUserDto dto, CancellationToken ct = default)
+    public async Task<Result<UserDto>> LoginAsync(LoginUserDto dto, CancellationToken ct = default)
     {
-        throw new NotImplementedException();
+        var user = await userManager.FindByEmailAsync(dto.Email);
+
+        if (user is null)
+            return Result<UserDto>.NotFound(ResourceErrorMessages.USER_NOT_FOUND);
+
+        var signInResult = await signInManager.PasswordSignInAsync(
+            user,
+            dto.Password,
+            isPersistent: false,
+            lockoutOnFailure: false);
+
+        if (!signInResult.Succeeded)
+            return Result<UserDto>.ValidationError(ResourceErrorMessages.INVALID_CREDENTIALS);
+
+        return Result<UserDto>.Success(new UserDto(user.Fullname, user.Email!));
     }
 
     public async Task<Result<UserDto>> RegisterAsync(RegisterUserDto dto, CancellationToken ct = default)
